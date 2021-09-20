@@ -1,0 +1,10 @@
+select case
+when A+B>C AND B+C>A AND C+A>B
+THEN 
+CASE WHEN A=B AND A=C THEN 'Equilateral'
+WHEN A=B OR B=C OR C=A THEN 'Isosceles'
+ELSE 'Scalene'
+END 
+ELSE 'Not A Triangle'
+END AS triangle_sides
+FROM TRIANGLES
